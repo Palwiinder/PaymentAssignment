@@ -1,0 +1,35 @@
+﻿@model PaymentAssignment.Models.CreatePayementViewModel
+
+
+<div style="padding-left:400px">
+    <form method="post" action="@Url.Action("Create","Home")">
+        @Html.ValidationSummary(false)
+
+        <div class="form-group">
+            @Html.LabelFor(p => p.FirstName, "FirstName:")
+            @Html.TextBoxFor(p => p.FirstName, new { @class = "form-control", placeholder = "FirstName" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.LastName, "LastName:")
+            @Html.TextBoxFor(p => p.LastName, new { @class = "form-control", placeholder = "LastName" })
+        </div>
+        <div class="form-group">
+            @Html.DropDownListFor(p => p.Brand, Model.Brand)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.Amount, "Amonut:")
+            @Html.TextBoxFor(p => p.Amount, new { @class = "form-control", placeholder = "Amonut" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.CreditCardNumber, "CreditCardNumber:")
+            @Html.TextBoxFor(p => p.CreditCardNumber, new { @class = "form-control", placeholder = "CreditCardNumber" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.SecurityCode, "SecurityCode:")
+            @Html.TextBoxFor(p => p.SecurityCode, new { @class = "form-control", placeholder = "SecurityCode" })
+        </div>
+        <div class="">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </form>
+</div>
